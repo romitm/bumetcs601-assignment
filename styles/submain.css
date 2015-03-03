@@ -1,0 +1,385 @@
+/* Copyright Protected 2015 Boston University, Romit Maity BU MET CS */
+/* For the JS Show Hide Areas */
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+}
+
+/* Print toggle displays */
+.show-on-print {
+	display: none;
+}
+.show-footer-on-print {
+	display: none;
+}
+.show-on-screen {
+	display: inline;
+}
+
+/* Menu items */
+ul li {
+	display: inline;
+	padding-left: 4%;
+}
+ul[class="feature"] li[class="feature"] {
+	display: list-item;
+	padding: 1%;
+	list-style-type: square; 
+	text-align: justify;
+}
+ul[class="logolinks"] li[class="logolinks"] {
+	display: list-item;
+	padding: 1%;
+	list-style-type: none; 
+	text-align: center;
+	font-family: 'Alegreya Sans', sans-serif;
+	font-size: 140%;
+	font-weight: normal;
+	color: #898989;
+}
+.menu-padding {
+	padding-right: 10%;
+}
+.menu-item {
+	color: #fff;
+}
+.menu-height {
+	height: 10px;
+}
+.active-link {
+	text-decoration: underline;
+}
+/* Selective Anchor Styling */
+a[class="menu-link"] {
+	text-decoration: none;
+}
+a[class="menu-link"]:link {
+	color: #fff;
+}
+a[class="menu-link"]:visited {
+	color: #fff;
+}
+a[class="menu-link"]:hover {
+	color: #66ff99;
+	text-decoration: underline;
+}
+a[class="menu-link"]:active {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.subhero {
+	font-family: 'Alegreya Sans', sans-serif;
+	font-size: 220%;
+	font-weight: normal;
+	color: #44aaff;
+}
+
+/* User constructed CSS */
+body {
+	margin: 0 auto;
+	font-family: 'Droid Sans', 'Alegreya Sans', sans-serif;
+	color: #767676;
+	font-style: normal;
+	font-size: 90%;
+}
+.header {
+	color: white;
+	font-size: 200%;
+	font-weight: normal;
+	padding-left: 4%;
+}
+.t-center {
+	text-align: center;
+}
+.t-right {
+	text-align: right;
+}
+.t-justify {
+	text-align: justify;
+}
+.l-spacing {
+	line-height: 29px;
+}
+.padtop-1 {
+	padding-top: 1%;
+}
+.padtop-2 {
+	padding-top: 2%;
+}
+.padtop-4 {
+	padding-top: 4%;
+}
+.padtop-20 {
+	padding-top: 20%;
+}
+.padbottom-1 {
+	padding-bottom: 1%;
+}
+.hgrid-7 {
+	height: 70px;
+}
+.hgrid-5 {
+	height: 50px;
+}
+.hgrid-3 {
+	height: 30px;
+}
+.hgrid-1 {
+	height: 15px;
+}
+.bgblack {
+	background-color: #121212;
+}
+.bgblue {
+	background-color: #3399ff;
+}
+.bgltblue {
+	background-color: #fff7f1;	
+}
+.footer-area {
+	display: inline-block;
+	border-top: 1px solid #cdcdcd;
+}
+.dialog {
+	background-color: magenta;
+	height: 50px;
+}
+.gallery-image {
+	background-image: url('../images/webglogo.jpg');
+	background-repeat: no-repeat;
+}
+h1 {
+	color: #898989;
+	font-family: 'Alegreya Sans', 'Droid Sans';
+	font-weight: 300;
+	font-size: 600%;
+}
+h1[class="sub-header"] {
+	letter-spacing: 0.2em;
+	color: #444;
+}
+h2 {
+	color: #797979;
+	font-family: 'Alegreya Sans', 'Droid Sans';
+	font-weight: 300;
+	font-size: 280%;
+}
+h3, strong {
+	color: #19A347;
+	font-size: 105%;
+}
+h2[class="sub-header"] {
+	letter-spacing: 0.2em;
+	color: #222;
+}
+h4 {
+	color: #cc0000;
+	font-size: 95%;	
+}
+.mandatory {
+	color: #cc0000;
+	font-size: 88%;
+}
+
+/* Table Styling */
+table {
+	width: 80%;
+	border-spacing: 6px;
+	margin: 0 auto;
+}
+caption {
+	height: 40px;
+	padding: 1%;
+	font-size: 180%;
+}
+th, td {
+    height: 52px;
+    padding: 0 2% 0 2%;
+}
+th, tfoot {
+	background-color: #797979;
+	color: #fff;
+	text-align: center;
+}
+td[class="even-row"] {
+	background-color: #f6faff;
+	text-align: left;
+}
+td[class="odd-row"] {
+	background-color: #f4f4f4;
+	text-align: left;
+}
+
+/* Textbos styling */
+input[type="text"], input[type="password"], input[type="email"], select {
+	display: block;
+	margin: 0;
+	height: 30px;
+	padding-left: 10px;
+	border: 1.5px solid #9a9a9a;
+	background-color: #fff;
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, select:focus {
+	border: solid 1.5px #19A347;
+}
+.medium-wide {
+	width: 200px;	
+}
+.high-wide {
+	width: 400px;
+}
+.low-wide {
+	width: 140px;
+}
+
+/* The image shadow has been taken from W3Schools and modified for the project needs, http://www.w3schools.com/cssref/css3_pr_box-shadow.asp */
+.img-shadow {
+	box-shadow: 4px 4px 14px 3px #adadad;
+}
+
+/* Button Styling */
+input[type="button"], input[type="submit"] {
+	padding-top: 10px; 
+	padding-bottom: 15px; 
+	background: #3399ff;
+	border: none;
+	cursor: pointer;
+	height: 35px;
+	width: 120px;
+	color: #fff;
+	text-align: center;
+}
+input[type="button"]:hover, input[type="submit"]:hover {
+	color: #ff6600;
+	background: #cdcdcd;
+}
+input[type="button"].warning-button {
+	padding-top: 10px; 
+	padding-bottom: 15px; 
+	background: #cc0000;
+	border: none;
+	cursor: pointer;
+	height: 35px;
+	width: 120px;
+	color: #fff;
+	text-align: center;
+}
+input[type="button"].warning-button:hover {
+	color: #19A347;
+	background: #cdcdcd;
+}
+
+/* Column Gradient */
+.sub-col-grad {
+	background: -webkit-linear-gradient(right, #dfdfdf, #fefefe); /* For Safari 5.1 to 6.0 */
+ 	background: -o-linear-gradient(right, #dfdfdf, #fefefe); /* For Opera 11.1 to 12.0 */
+ 	background: -moz-linear-gradient(right, #dfdfdf, #fefefe); /* For Firefox 3.6 to 15 */
+ 	background: linear-gradient(to right, #dfdfdf, #fefefe); /* Standard syntax */
+}
+.sub-col-grad-blue {
+	background: -webkit-linear-gradient(right, #ebf5ff, #f6faff); /* For Safari 5.1 to 6.0 */
+ 	background: -o-linear-gradient(right, #ebf5ff, #f6faff); /* For Opera 11.1 to 12.0 */
+ 	background: -moz-linear-gradient(right, #ebf5ff, #f6faff); /* For Firefox 3.6 to 15 */
+ 	background: linear-gradient(to right, #ebf5ff, #f6faff); /* Standard syntax */
+}
+.sub-col-grad-orange {
+	background: -webkit-linear-gradient(right, #ffe0d1, #fff5f0); /* For Safari 5.1 to 6.0 */
+ 	background: -o-linear-gradient(right, #ffe0d1, #fff5f0); /* For Opera 11.1 to 12.0 */
+ 	background: -moz-linear-gradient(right, #ffe0d1, #fff5f0); /* For Firefox 3.6 to 15 */
+ 	background: linear-gradient(to right, #ffe0d1, #fff5f0); /* Standard syntax */
+}
+.menu-col-grad {
+	background: -webkit-linear-gradient(left, #134aa1, #44aaff); /* For Safari 5.1 to 6.0 */
+ 	background: -o-linear-gradient(left, #134aa1, #44aaff); /* For Opera 11.1 to 12.0 */
+ 	background: -moz-linear-gradient(left, #134aa1, #44aaff); /* For Firefox 3.6 to 15 */
+ 	background: linear-gradient(to left, #134aa1, #44aaff); /* Standard syntax */
+}
+.sub-list-col-hard {
+	background-color: #fefefe;
+}
+
+/* Column Hard Color */
+.col-header {
+	background-color: #a4a4a4;
+	font-size: 75%;
+	font-weight: bold;
+}
+.col-even {
+	background-color: #fff5f0;
+	font-size: 72%;
+}
+.col-odd {
+	background-color: #f6faff;
+	font-size: 72%;
+}
+
+/* Row Height Specifications */
+.row-20{height: 20px;}
+.row-100{height: 100px;}
+.row-200{height: 200px;}
+.row-300{height: 300px;}
+.row-400{height: 400px;}
+.row-500{height: 500px;}
+
+/* Selective Anchor Styling */
+a[class="ext-link"] {
+	text-decoration: none;
+}
+a[class="ext-link"]:link {
+    color: #0066cc;
+}
+a[class="ext-link"]:visited {
+    color: #0066cc;
+}
+a[class="ext-link"]:hover {
+    color: #ff6600;
+}
+a[class="ext-link"]:active {
+    color: #0066cc;
+}
+
+/* Social Footer Icons Hover Property */
+a[class="social-link"] { text-decoration: none; }
+a[class="social-link"] img:last-child { display: none; }
+a[class="social-link"]:hover img:first-child { display: none; }
+a[class="social-link"]:hover img:last-child{ display: inline-block; }
+
+/* 
+	Wanted to Learn the basics of a CSSGrid system and 
+	utilized content from the following author:
+	http://j4n.co/blog/Creating-your-own-css-grid-system
+	This section has been modified to suit the needs of this project.
+	Responsive nature has been omitted for the time being.
+*/ 
+.grid-container{
+	width: 100%;
+	min-width: 1400px;
+}
+.row:before, 
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+[class*='col-'] {
+	float: left; 
+	min-height: 1px; 
+	width: 8%; 
+	padding: 0% 1% 0% 1%;
+}
+.col-1{width: 8%;}
+.col-2{width: 18%;}
+.col-3{width: 28%;}
+.col-4{width: 38%;}
+.col-5{width: 48%;}
+.col-6{width: 58%;}
+.col-7{width: 68%;}
+.col-8{width: 78%;}
+.col-9{width: 88%;}
+.col-10{width: 98%;}
+.outline, .outline *{
+    outline: 1px solid #656565; 
+}

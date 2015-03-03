@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Welcome</title>
+<!-- Main Stylesheet -->
+<link rel="stylesheet" type="text/css" href="styles/submain.css">
+<!-- Learning to add Google Font on the page -->
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+<meta name="description" content="Boston University">
+<meta name="keywords" content="BU, CS601, Web Application Development, Spring, 2015">
+<!-- Learning to add a favicon -->
+<link rel="icon" href="images/favicon.ico?v=3" type="image/x-icon" />
+<meta charset="UTF-8">
+<!-- External Javascript file control -->
+<script src="scripts/sumaction.js"></script>
+</head>
+<body onload="javascript:muteFormObjects();">
+	<header>
+		<div class="grid-container hgrid-5 bgblack">
+			<div class="row padtop-2 bgblack">
+				<div class="col-8 bgblack">
+					<div class="header"><p>Javascript Rules!</p></div>
+				</div>
+				<div class="col-2 bgblack">
+					<p><img src="images/logo.png" alt="Site Logo" width="200" /></p>
+				</div>
+			</div>
+			<div class="row bgblue">
+				<div class="col-10 menu-col-grad">
+					<div class="t-right menu-padding menu-item">
+						<nav>
+							<ul>
+								<li><a class="menu-link" href="home.html">Home</a></li>
+								<li><a class="menu-link" href="profile.html">Profile</a></li>
+								<li><a class="menu-link" href="subscribe.html">Subscribe</a></li>
+								<li><a class="menu-link" href="gallery.html">Gallery</a></li>
+								<li><a class="menu-link" href="feature.html">Feature</a></li>
+								<li class="active-link">JSWorks</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section>
+		<form>
+			<div class="grid-container">
+				<div class="row">
+					<div class="col-10">&nbsp;</div>
+				</div>
+				<div class="row">
+					<div class="col-1"></div>
+					<div class="col-8 sub-col-grad">
+						<h3>Welcome! Please Enter your Name here:</h3>
+					</div>
+					<div class="col-1"></div>
+				</div>
+				<div class="row hgrid-3 padtop-2">
+					<div class="col-1"></div>
+					<div class="col-3">
+						<input type="text" id="username" name="username" class="high-wide" placeholder="First Name Would do Just Fine!" autofocus />
+					</div>
+					<div class="col-3">
+						<input type="button" name="submit" value="Enter" onclick="javascript:validateUser();" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-1"></div>
+					<div class="col-8">
+						<p id="welcome-user"></p>
+					</div>
+
+				</div>
+			</div>
+			<div id="add-area" class="grid-container">
+				<!-- Add Area Starts here -->
+				<div class="row hgrid-5 padtop-2">
+					<div class="col-1"></div>
+					<div class="col-8 sub-col-grad ">
+						<h3>Now can you enter two numbers for me, please.</h3>
+					</div>
+				</div>
+				<div class="row hgrid-3 padtop-2">
+					<div class="col-1"></div>
+					<div class="col-1 t-right"><p>First Number:</p></div>
+					<div class="col-1">
+						<input type="text" id="firstnumber" name="firstnumber" class="low-wide" placeholder="Enter the first number" maxlength="5" required />
+					</div>
+					<div class="col-2 t-right"><p>Second Number:</p></div>
+					<div class="col-2">
+						<input type="text" id="secondnumber" name="secondnumber" class="low-wide" placeholder="Enter the second number" maxlength="5" required />
+					</div>
+					<div class="col-2">
+						<input type="button" name="add" value="Sum Total" onclick="javascript:addEnteredValues();thankUser();" />
+					</div>
+				</div>
+				<div class="row">
+				</div>
+				<div class="row">
+					<div class="col-1"></div>
+					<div class="col-8">
+						<p id="summation"></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-1"></div>
+					<div class="col-8">
+						<p id="thanks"></p>
+					</div>
+				</div>
+			</div>
+		</form>
+	</section>
+	<footer>
+		<div id="ftr-area" class="grid-container footer-area">
+			<div class="row">
+				<div class="col-10 hgrid-3">&nbsp;</div>
+			</div>
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-2">
+					<p>
+						<a class="social-link" href="http://www.facebook.com/" target="_blank">
+							<img src="images/SFacebookA.png" alt="Facebook" width="40" />
+							<img src="images/SFacebook.png" alt="Facebook" width="40" />
+						</a>&nbsp;
+						<a class="social-link" href="http://www.twitter.com/" target="_blank">
+							<img src="images/STwitterA.png" alt="Twitter" width="40" />
+							<img src="images/STwitter.png" alt="Twitter" width="40" />
+						</a>&nbsp;
+						<a class="social-link" href="http://www.youtube.com/" target="_blank">
+							<img src="images/SYouTubeA.png" alt="Youtube" width="40" />
+							<img src="images/SYouTube.png" alt="Youtube" width="40" />
+						</a>&nbsp;
+						<a class="social-link" href="http://www.linkedin.com/" target="_blank">
+							<img src="images/SLinkedinA.png" alt="Linked In" width="40" />
+							<img src="images/SLinkedin.png" alt="Linked In" width="40" />
+						</a>
+					</p>
+				</div>
+				<div class="col-6 t-right">
+					<p>Email: <a class="ext-link" href="mailto:romit@bu.edu">romit@bu.edu</a></p>
+					<p>Copyright &copy; 2015, Boston University</p>
+				</div>
+				<div class="col-1"></div>
+			</div>
+			<div class="row">
+				<div class="col-10 hgrid-1">&nbsp;</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
+<!-- Copyright Protected 2015 Boston University, Romit Maity BU MET CS -->

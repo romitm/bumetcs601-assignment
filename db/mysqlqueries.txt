@@ -1,0 +1,30 @@
+create database bumetcs;
+
+use bumetcs;
+
+create table newsletter_subscription (
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	first_name VARCHAR(30) NOT NULL, 
+	last_name VARCHAR(30) NOT NULL, 
+	email VARCHAR(70) NOT NULL, 
+	status CHAR(1) NOT NULL, 
+	birth_day VARCHAR(2), 
+	birth_month VARCHAR(10), 
+	sys_ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+
+describe newsletter_subscription;
+
+insert into newsletter_subscription (
+	first_name, last_name, email, status, birth_day, birth_month) 
+values (
+	'John', 'Smith', 'jsmith@hotmail.com', 'Y', '24', 'March');
+
+select * from newsletter_subscription;
+
+alter table newsletter_subscription drop id;
+
+alter table newsletter_subscription AUTO_INCREMENT = 1;
+
+alter table newsletter_subscription add id int unsigned not null auto_increment primary key first;
+
+update newsletter_subscription set status = 'N' where id = 1;

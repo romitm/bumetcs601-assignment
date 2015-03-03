@@ -1,0 +1,65 @@
+body {
+	font-family: "Arial";
+	color: #5f5f5f;
+	font-size: 100%;
+	font-weight: normal;
+}
+.img-shadow {
+	box-shadow: 0px 0px 0px 0px #adadad;
+}
+.show-on-screen {
+	display: none;
+}
+.show-on-print {
+	display: block;
+	text-align: center;
+	height: 26px;
+	border: 1px solid #cc0000;
+	padding-top: 8px;
+}
+.show-footer-on-print {
+	display: block;
+}
+
+.header-image {
+	display: none;
+}
+
+.grid-container{
+	width: 100%;
+	min-width: 800px;
+}
+#navbar {
+	display: none;
+}
+
+/* Change the Footer for Printing */
+.social-link {
+	display: none;
+}
+ .footer-area {
+ 	display: none;
+ }
+
+/* Anchor tags adjusted */
+a {
+	font-size: 100%;
+	font-weight: normal;
+	text-decoration: none;
+}
+/* unvisited link */
+a[class="ext-link"]:link {
+    color: #5f5f5f;
+}
+/* visited link */
+a[class="ext-link"]:visited {
+    color: #5f5f5f;
+}
+/* mouse over link */
+a[class="ext-link"]:hover {
+    color: #5f5f5f;
+}
+/* selected link */
+a[class="ext-link"]:active {
+    color: #5f5f5f;
+}

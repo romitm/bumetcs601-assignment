@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Subscribe</title>
+<!-- Main Stylesheet -->
+<link rel="stylesheet" type="text/css" href="styles/submain.css">
+<!-- Learning to add Google Font on the page -->
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+<meta name="description" content="Boston University">
+<meta name="keywords" content="BU, CS601, Web Application Development, Spring, 2015">
+<!-- Learning to add a favicon -->
+<link rel="icon" href="images/favicon.ico?v=3" type="image/x-icon" />
+<meta charset="UTF-8">
+<!-- External Javascript file control -->
+<script src="scripts/validation.js"></script>
+</head>
+<body>
+	<header>
+		<div class="grid-container hgrid-5 bgblack">
+			<div class="row padtop-2 bgblack">
+				<div class="col-8 bgblack">
+					<div class="header"><p>Newsletter Subscription</p></div>
+				</div>
+				<div class="col-2 bgblack">
+					<p><img src="images/logo.png" alt="Site Logo" width="200" /></p>
+				</div>
+			</div>
+			<div id="navbar" class="row bgblue">
+				<div class="col-10 menu-col-grad">
+					<div class="t-right menu-padding menu-item">
+						<nav>
+							<ul>
+								<li><a class="menu-link" href="home.html">Home</a></li>
+								<li><a class="menu-link" href="profile.html">Profile</a></li>
+								<li class="active-link">Subscribe</li>
+								<li><a class="menu-link" href="gallery.html">Gallery</a></li>
+								<li><a class="menu-link" href="feature.html">Feature</a></li>
+								<li><a class="menu-link" href="jwelcome.html">JSWorks</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section>
+		<form id="subscribe-newsletter" action="_subscribeset.php" method="POST">
+			<div class="grid-container">
+				<div class="row">
+					<div class="col-10">&nbsp;</div>
+				</div>
+				<div class="row">
+					<div class="col-1"></div>
+					<div class="col-8 sub-col-grad">
+						<div><h3>Enter your details here for the Subscription</h3></div>
+					</div>
+					<div class="col-1"></div>
+				</div>
+				<div class="row padtop-1">
+					<div class="col-1"></div>
+					<div class="col-1"><p>First Name:<span class="mandatory">&nbsp;*</span></p></div>
+					<div class="col-4">
+						<input type="text" id="firstname" name="firstname" class="medium-wide" onblur="javascript:validateFirstName();" onchange="javascript:validateFirstName();" placeholder="First Name Would do Just Fine!" maxlength="30" autofocus />
+					</div>
+					<div id="err-div-1" class="col-3"><p id="firstname-error"></p></div>
+				</div>
+				<div class="row padtop-1">
+					<div class="col-1"></div>
+					<div class="col-1"><p>Last Name:<span class="mandatory">&nbsp;*</span></p></div>
+					<div class="col-4">
+						<input type="text" id="lastname" name="lastname" class="medium-wide" onblur="javascript:validateLastName();" onchange="javascript:validateLastName();" placeholder="Last Name here!" maxlength="30" />
+					</div>
+					<div id="err-div-2" class="col-3"><p id="lastname-error"></p></div>
+				</div>
+				<div class="row padtop-1">
+					<div class="col-1"></div>
+					<div class="col-1"><p>Birth Day:</p></div>
+					<div class="col-4">
+						<input type="text" id="birthday" name="birthday" class="low-wide" onblur="javascript:validateBirthDayMonth();" onchange="javascript:validateBirthDayMonth();" placeholder="Two digits. 1 to 31." maxlength="2" />
+					</div>
+					<div id="err-div-3" class="col-3"><p id="bd-error"></p></div>
+				</div>
+				<div class="row padtop-1">
+					<div class="col-1"></div>
+					<div class="col-1"><p>Birth Month:</p></div>
+					<div class="col-4">
+						<!--input type="month" min="month" max="month" id="birthmonth" name="birthmonth" class="low-wide" placeholder="Month Here." maxlength="3" /-->
+						<select id="birthmonth" name="birthmonth" class="low-wide" onblur="javascript:validateBirthDayMonth();" onchange="javascript:validateBirthDayMonth();">
+							<option value="0" selected>- Select One -</option>
+							<option value="1">January</option>
+							<option value="2">February</option>
+							<option value="3">March</option>
+							<option value="4">April</option>
+							<option value="5">May</option>
+							<option value="6">June</option>
+							<option value="7">July</option>
+							<option value="8">August</option>
+							<option value="9">September</option>
+							<option value="10">October</option>
+							<option value="11">November</option>
+							<option value="12">December</option>
+						</select>
+					</div>
+					<div id="err-div-4" class="col-3"><p id="bm-error"></p></div>
+				</div>
+				<div class="row padtop-1 padbottom-1">
+					<div class="col-1"></div>
+					<div class="col-1"><p>Email:<span class="mandatory">&nbsp;*</span></p></div>
+					<div class="col-4">
+						<input type="email" id="email" name="email" class="high-wide" onblur="javascript:validateEmail();" onchange="javascript:validateEmail();" placeholder="And your email here!" maxlength="70" />
+					</div>
+					<div id="err-div-5" class="col-3"><p id="email-error"></p></div>
+				</div>
+				<div class="row">
+					<div class="col-1"></div>
+					<div class="col-1">
+						<input type="button" name="subscribe" value="Subscribe" onclick="javascript:subscribeUser();" />
+					</div>
+					<div class="col-1">
+						<input type="button" name="unsubscribe" value="Unsubscribe" class="warning-button" onclick="javascript:unsubscribeUser();" />
+					</div>
+					<div class="col-6"><p>*&nbsp;Enter only the Email address if you want to Unsubscribe.</p></div>
+					<div class="col-1">
+						<input type="hidden" name="userinput" id="userinput" value="default" />
+					</div>
+				</div>
+				<div class="row row-20">
+					<div class="col-10">&nbsp;</div>
+				</div>
+			</div>
+		</form>
+	</section>
+	<footer>
+		<div id="ftr-area" class="grid-container footer-area">
+			<div class="row">
+				<div class="col-10 hgrid-3">&nbsp;</div>
+			</div>
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-2">
+					<p>
+						<a class="social-link" href="http://www.facebook.com/" target="_blank">
+							<img src="images/SFacebookA.png" alt="Facebook" width="40" />
+							<img src="images/SFacebook.png" alt="Facebook" width="40" />
+						</a>&nbsp;
+						<a class="social-link" href="http://www.twitter.com/" target="_blank">
+							<img src="images/STwitterA.png" alt="Twitter" width="40" />
+							<img src="images/STwitter.png" alt="Twitter" width="40" />
+						</a>&nbsp;
+						<a class="social-link" href="http://www.youtube.com/" target="_blank">
+							<img src="images/SYouTubeA.png" alt="Youtube" width="40" />
+							<img src="images/SYouTube.png" alt="Youtube" width="40" />
+						</a>&nbsp;
+						<a class="social-link" href="http://www.linkedin.com/" target="_blank">
+							<img src="images/SLinkedinA.png" alt="Linked In" width="40" />
+							<img src="images/SLinkedin.png" alt="Linked In" width="40" />
+						</a>
+					</p>
+				</div>
+				<div class="col-6 t-right">
+					<p>Email: <a class="ext-link" href="mailto:romit@bu.edu">romit@bu.edu</a></p>
+					<p>Copyright &copy; 2015, Boston University</p>
+				</div>
+				<div class="col-1"></div>
+			</div>
+			<div class="row">
+				<div class="col-10 hgrid-1">&nbsp;</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
+<!-- Copyright Protected 2015 Boston University, Romit Maity BU MET CS -->
