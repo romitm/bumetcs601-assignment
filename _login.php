@@ -1,3 +1,6 @@
+<?php
+	session_start();	
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,10 +20,24 @@
 function clearFormValues() {
 	document.getElementById("siteusername").value = "";
 	document.getElementById("sitepassword").value = "";
+	//document.getElementById("sitelogin").disabled = true;
+	//document.getElementById("siteclearform").disabled = true;
+}
+function activateFormButtons() {
+	var usrname = document.getElementById("siteusername").value;
+	var usrpwd = document.getElementById("sitepassword").value;
+	if (usrname.trim() != "" && usrpwd != "") {
+		document.getElementById("sitelogin").disabled = false;
+		document.getElementById("siteclearform").disabled = false;
+	}
+}
+function disableButtonsOnLoad() {
+	//document.getElementById("sitelogin").disabled = true;
+	//document.getElementById("siteclearform").disabled = true;
 }
 </script>
 </head>
-<body>
+<body onload="javascript:disableButtonsOnLoad();">
 	<header>
 		<div class="grid-container hgrid-5 bgblack">
 			<div class="row padtop-2 bgblack">
@@ -54,14 +71,28 @@ function clearFormValues() {
 				<div class="row">
 					<div class="col-10 hgrid-7">&nbsp;</div>
 				</div>
-				<div class="row">
-					<div class="col-10 hgrid-5">&nbsp;</div>
-				</div>
+				<!-- In case of Login Error this DIV will show up -->
+				<?php
+					if (!empty($_SESSION["usererror"]) && $_SESSION["usererror"] == "ERR01") {
+						echo "
+						<div class=\"row padtop-4\">
+							<div class=\"col-1\"></div>
+							<div class=\"col-8\"><h4>Incorrect Login Information has been used. Please try Again.</h4></div>
+							<div class=\"col-1\"></div>
+						</div>";
+					} else {
+						echo "
+						<div class=\"row\">
+							<div class=\"col-10 hgrid-5\">&nbsp;</div>
+						</div>";
+					}
+				?> 
+				<!-- In case of Login Error this DIV will show up -->
 				<div class="row padtop-1">
 					<div class="col-1"></div>
 					<div class="col-1"><p>Username:<span class="mandatory">&nbsp;*</span></p></div>
 					<div class="col-4">
-						<input type="text" id="siteusername" name="siteusername" class="medium-wide" onblur="" onchange="" placeholder="Username" maxlength="30" autofocus />
+						<input type="text" id="siteusername" name="siteusername" class="medium-wide" placeholder="Username" maxlength="20" minlength="6" required autofocus />
 					</div>
 					<div id="err-div-1" class="col-3"><p id="firstname-error"></p></div>
 				</div>
@@ -69,7 +100,7 @@ function clearFormValues() {
 					<div class="col-1"></div>
 					<div class="col-1"><p>Password:<span class="mandatory">&nbsp;*</span></p></div>
 					<div class="col-4">
-						<input type="password" id="sitepassword" name="sitepassword" class="medium-wide" onblur="" onchange="" placeholder="Password" maxlength="30" />
+						<input type="password" id="sitepassword" name="sitepassword" class="medium-wide" placeholder="Password" maxlength="20" minlength="6" required />
 					</div>
 					<div id="err-div-2" class="col-3"><p id="lastname-error"></p></div>
 				</div>
@@ -79,10 +110,10 @@ function clearFormValues() {
 				<div class="row">
 					<div class="col-1"></div>
 					<div class="col-1">
-						<input type="submit" name="sitelogin" value="Login" />
+						<input type="submit" id="sitelogin" name="sitelogin" value="Login" />
 					</div>
 					<div class="col-1">
-						<input type="button" name="unsubscribe" value="Clear" class="warning-button" onclick="javascript:clearFormValues();" />
+						<input type="button" id="siteclearform" name="siteclearform" value="Clear" class="warning-button" onclick="javascript:clearFormValues();" />
 					</div>
 					<div class="col-6"></div>
 					<div class="col-1"></div>
