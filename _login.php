@@ -67,11 +67,11 @@ function disableButtonsOnLoad() {
 	</header>
 	<section>
 		<form id="site-login" action="_loginset.php" method="POST">
-			<div class="grid-container">
+			<div class="grid-container sub-list-col-hard">
 				<div class="row">
 					<div class="col-10 hgrid-7">&nbsp;</div>
 				</div>
-				<!-- In case of Login Error this DIV will show up -->
+				<!-- In case of Login Error the DIV below will show up -->
 				<?php
 					if (!empty($_SESSION["usererror"]) && $_SESSION["usererror"] == "ERR01") {
 						echo "
@@ -80,6 +80,7 @@ function disableButtonsOnLoad() {
 							<div class=\"col-8\"><h4>Incorrect Login Information has been used. Please try Again.</h4></div>
 							<div class=\"col-1\"></div>
 						</div>";
+						$_SESSION["usererror"] = "";
 					} else {
 						echo "
 						<div class=\"row\">
@@ -87,14 +88,21 @@ function disableButtonsOnLoad() {
 						</div>";
 					}
 				?> 
-				<!-- In case of Login Error this DIV will show up -->
+				<!-- In case of Login Error the DIV above will show up -->
+				<div class="row">
+					<div class="col-1"></div>
+					<div class="col-3 sub-col-grad">
+						<h3>Administrator Login</h3>
+					</div>
+					<div class="col-6"></div>
+				</div>
 				<div class="row padtop-1">
 					<div class="col-1"></div>
 					<div class="col-1"><p>Username:<span class="mandatory">&nbsp;*</span></p></div>
 					<div class="col-4">
 						<input type="text" id="siteusername" name="siteusername" class="medium-wide" placeholder="Username" maxlength="20" minlength="6" required autofocus />
 					</div>
-					<div id="err-div-1" class="col-3"><p id="firstname-error"></p></div>
+					<div class="col-3"></div>
 				</div>
 				<div class="row padtop-1">
 					<div class="col-1"></div>
@@ -102,10 +110,10 @@ function disableButtonsOnLoad() {
 					<div class="col-4">
 						<input type="password" id="sitepassword" name="sitepassword" class="medium-wide" placeholder="Password" maxlength="20" minlength="6" required />
 					</div>
-					<div id="err-div-2" class="col-3"><p id="lastname-error"></p></div>
+					<div class="col-3"></div>
 				</div>
 				<div class="row">
-					<div class="col-10 hgrid-3">&nbsp;</div>
+					<div class="col-10 hgrid-1">&nbsp;</div>
 				</div>
 				<div class="row">
 					<div class="col-1"></div>

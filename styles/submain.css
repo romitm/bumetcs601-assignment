@@ -139,6 +139,9 @@ body {
 .bgltblue {
 	background-color: #fff7f1;	
 }
+.line-separator {
+	border-top: 1px solid #cdcdcd;
+}
 .footer-area {
 	display: inline-block;
 	border-top: 1px solid #cdcdcd;
@@ -303,7 +306,7 @@ input[type="button"].warning-button:hover {
 
 /* Column Hard Color */
 .col-header {
-	background-color: #a4a4a4;
+	background-color: #efefef;
 	font-size: 75%;
 	font-weight: bold;
 }

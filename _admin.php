@@ -1,3 +1,9 @@
+<?php
+	session_start();
+	if (empty($_SESSION["uservar"])) {
+		header("location: _login.php");
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,12 +34,7 @@
 				<div class="t-right menu-padding menu-item">
 					<nav>
 						<ul>
-							<li><a class="menu-link" href="home.html">Home</a></li>
-							<li><a class="menu-link" href="profile.html">Profile</a></li>
-							<li><a class="menu-link" href="subscribe.html">Subscribe</a></li>
-							<li><a class="menu-link" href="gallery.html">Gallery</a></li>
-							<li><a class="menu-link" href="feature.html">Feature</a></li>
-							<li><a class="menu-link" href="jwelcome.html">JSWorks</a></li>
+							<li><a class="menu-link" href="_logout.php">Logout</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -43,6 +44,9 @@
 </header>
 <section>
 	<div class="grid-container">
+		<div class="row">
+			<div class="col-10 hgrid-3">&nbsp;</div>
+		</div>
 <?php
 	/*
 	$mysql_host = "mysql3.000webhost.com";
@@ -63,10 +67,10 @@
 		die("<h4>Connection Failed: </h4>" . $conn->connect_error . "<br/>");
 	}
 	echo "
-	<div class=\"row padtop-4 padtop-1\">
+	<div class=\"row padtop-2\">
 		<div class=\"col-1\"></div>
 		<div class=\"col-8 sub-col-grad\">
-			<div><h3>Connected Successfully, to MySQL Database Server!</h3></div>
+			<div><h3>Displaying All Newsletter Subscribers</h3></div>
 		</div>
 		<div class=\"col-1\"></div>
 	</div>";
@@ -141,6 +145,9 @@
 	}
 	$conn->close();
 ?>
+		<div class="row">
+			<div class="col-10 hgrid-5">&nbsp;</div>
+		</div>
 	</div>
 </section>
 <footer>
