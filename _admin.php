@@ -99,7 +99,7 @@
 		while($row = $result->fetch_assoc()) {
 			if ($count % 2 == 0) {
 				echo "
-				<div class=\"row\">
+				<div id=\"" . $count . "\" class=\"row\">
 					<div class=\"col-1\"></div>
 					<div class=\"col-1 col-even\"><p>&nbsp;" . $row["id"] . "</p></div>
 					<div class=\"col-1 col-even\"><p>&nbsp;" . $row["first_name"] . "</p></div>
@@ -113,7 +113,7 @@
 				</div>";
 			} else {
 				echo "
-				<div class=\"row\">
+				<div id=\"" . $count . "\" class=\"row\">
 					<div class=\"col-1\"></div>
 					<div class=\"col-1 col-odd\"><p>&nbsp;" . $row["id"] . "</p></div>
 					<div class=\"col-1 col-odd\"><p>&nbsp;" . $row["first_name"] . "</p></div>
@@ -190,3 +190,4 @@
 	</footer>
 </body>
 </html>
+<!-- Copyright Protected 2015 Boston University, Romit Maity BU MET CS -->

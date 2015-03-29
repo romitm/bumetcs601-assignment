@@ -121,6 +121,9 @@ body {
 .hgrid-7 {
 	height: 70px;
 }
+.hgrid-6 {
+	height: 60px;
+}
 .hgrid-5 {
 	height: 50px;
 }
@@ -181,6 +184,10 @@ h2[class="sub-header"] {
 h4 {
 	color: #cc0000;
 	font-size: 95%;	
+}
+h5 {
+	color: #cc0000;
+	font-size: 64%;	
 }
 .mandatory {
 	color: #cc0000;
@@ -350,6 +357,24 @@ a[class="social-link"] img:last-child { display: none; }
 a[class="social-link"]:hover img:first-child { display: none; }
 a[class="social-link"]:hover img:last-child{ display: inline-block; }
 
+#firstnamemessage, #lastnamemessage, #birthdaymessage, #birthmonthmessage, #emailmessage {
+	height: 10mm;
+	width: 60mm;
+	font-size: 80%;
+	color: #434343;
+	background-color: #DFF2E7;
+    padding: 15;
+    position: absolute;
+    top: 30mm;
+    left: 130mm;
+    display: none;
+    -moz-border-radius: 0.4mm;
+    -webkit-border-radius: 0.4mm;    
+    border-radius: 0.4mm;
+    -moz-box-shadow: 0mm 0.2mm 1mm 0.5mm #545454;
+    -webkit-box-shadow: 0mm 0.2mm 1mm 0.5mm #545454;
+    box-shadow: 0mm 0.2mm 1mm 0.5mm #545454;
+}
 /* 
 	Wanted to Learn the basics of a CSSGrid system and 
 	utilized content from the following author:

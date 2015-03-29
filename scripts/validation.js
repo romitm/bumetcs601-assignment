@@ -5,7 +5,7 @@ function validateFirstName() {
 	var flag = false;
 	var fName = document.getElementById("firstname").value;
 	if (fName == "") {
-		document.getElementById("firstname-error").innerHTML = "<h4>*&nbsp;Sorry you did not enter anything in the field.</h4>";
+		document.getElementById("firstname-error").innerHTML = "<h5>*&nbsp;Sorry you did not enter anything in the field.</h5>";
 		document.getElementById("err-div-1").className = "col-3 sub-col-grad";
 	} else {
 		if (re.exec(fName)) {
@@ -13,7 +13,7 @@ function validateFirstName() {
 			document.getElementById("firstname-error").innerHTML = "";
 			document.getElementById("err-div-1").className = "col-3";
 		} else {
-			document.getElementById("firstname-error").innerHTML = "<h4>*&nbsp;Sorry only alphabets allowed.</h4>";
+			document.getElementById("firstname-error").innerHTML = "<h5>*&nbsp;Sorry only alphabets allowed.</h5>";
 			document.getElementById("err-div-1").className = "col-3 sub-col-grad";
 		}
 	}
@@ -25,7 +25,7 @@ function validateLastName() {
 	var flag = false;
 	var fName = document.getElementById("lastname").value;
 	if (fName == "") {
-		document.getElementById("lastname-error").innerHTML = "<h4>*&nbsp;Sorry you did not enter anything in the field.</h4>";
+		document.getElementById("lastname-error").innerHTML = "<h5>*&nbsp;Sorry you did not enter anything in the field.</h5>";
 		document.getElementById("err-div-2").className = "col-3 sub-col-grad";
 	} else {
 		if (re.exec(fName)) {
@@ -33,7 +33,7 @@ function validateLastName() {
 			document.getElementById("lastname-error").innerHTML = "";
 			document.getElementById("err-div-2").className = "col-3";
 		} else {
-			document.getElementById("lastname-error").innerHTML = "<h4>*&nbsp;Sorry only alphabets allowed.</h4>";
+			document.getElementById("lastname-error").innerHTML = "<h5>*&nbsp;Sorry only alphabets allowed.</h5>";
 			document.getElementById("err-div-2").className = "col-3 sub-col-grad";
 		}
 	}
@@ -50,10 +50,10 @@ function validateBirthDayMonth() {
 	var bm = bmid.options[bmid.selectedIndex].value;
 	//alert(bd + " " + bm);
 	if (bd.trim() != "" && isNaN(pbd)) {
-		document.getElementById("bd-error").innerHTML = "<h4>*&nbsp;Sorry enter a number only.</h4>";
+		document.getElementById("bd-error").innerHTML = "<h5>*&nbsp;Sorry enter a number only.</h5>";
 		document.getElementById("err-div-3").className = "col-3 sub-col-grad";
 	} else if (bd.trim() == "" && bm > 0) {
-		document.getElementById("bm-error").innerHTML = "<h4>*&nbsp;Please select a birthday now or deselect month.</h4>";
+		document.getElementById("bm-error").innerHTML = "<h5>*&nbsp;Please select a birthday now or deselect month.</h5>";
 		document.getElementById("err-div-4").className = "col-3 sub-col-grad";
 	} else if (bd.trim() == "" && bm == 0) {
 		flag = true;
@@ -64,16 +64,16 @@ function validateBirthDayMonth() {
 	} else {
 		// pbd is a number and needs to be validated.
 		if (pbd > 31 || pbd < 1) {
-			document.getElementById("bd-error").innerHTML = "<h4>*&nbsp;Sorry enter a number only between 1 an 31.</h4>";
+			document.getElementById("bd-error").innerHTML = "<h5>*&nbsp;Sorry enter a number only between 1 an 31.</h5>";
 			document.getElementById("err-div-3").className = "col-3 sub-col-grad";
 		} else if ((pbd > 30) && (bm == 2 || bm == 4 || bm == 6 || bm == 9 || bm == 11)) {
-			document.getElementById("bm-error").innerHTML = "<h4>*&nbsp;Month and Day combination inconsistent.</h4>";
+			document.getElementById("bm-error").innerHTML = "<h5>*&nbsp;Month and Day combination inconsistent.</h5>";
 			document.getElementById("err-div-4").className = "col-3 sub-col-grad";
 		} else if ((pbd > 28) && (bm == 2)) {
-			document.getElementById("bm-error").innerHTML = "<h4>*&nbsp;This is February we are talking about!</h4>";
+			document.getElementById("bm-error").innerHTML = "<h5>*&nbsp;This is February we are talking about!</h5>";
 			document.getElementById("err-div-4").className = "col-3 sub-col-grad";
 		} else if ((pbd > 0 && pbd < 32) && bm == 0) {
-			document.getElementById("bd-error").innerHTML = "<h4>*&nbsp;Please select a month now.</h4>";
+			document.getElementById("bd-error").innerHTML = "<h5>*&nbsp;Please select a month now.</h5>";
 			document.getElementById("err-div-3").className = "col-3 sub-col-grad";
 		} else {
 			flag = true;
@@ -91,7 +91,7 @@ function validateEmail() {
 	var flag = false;
 	var emailAdd = document.getElementById("email").value;
 	if (emailAdd == "") {
-		document.getElementById("email-error").innerHTML = "<h4>*&nbsp;Sorry you did not enter anything in the field.</h4>";
+		document.getElementById("email-error").innerHTML = "<h5>*&nbsp;Sorry you did not enter anything in the field.</h5>";
 		document.getElementById("err-div-5").className = "col-3 sub-col-grad";
 	} else {
 		if (re.test(emailAdd)) {
@@ -99,7 +99,7 @@ function validateEmail() {
 			document.getElementById("email-error").innerHTML = "";
 			document.getElementById("err-div-5").className = "col-3";
 		} else {
-			document.getElementById("email-error").innerHTML = "<h4>*&nbsp;Please enter a valid email address.</h4>";
+			document.getElementById("email-error").innerHTML = "<h5>*&nbsp;Please enter a valid email address.</h5>";
 			document.getElementById("err-div-5").className = "col-3 sub-col-grad";
 		}
 	}

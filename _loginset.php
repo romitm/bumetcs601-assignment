@@ -47,12 +47,10 @@
 			/* To protect MySQL injection for Security purpose */
 			$username = stripslashes($username);
 			$password = stripslashes($password);
-			$username = mysql_real_escape_string($username);
-			$password = mysql_real_escape_string($password);
 
 			/* Get Connection */
 			$mysqli = openMySQLDBConnection();
-			$stmt = $mysqli->prepare("SELECT count(1) FROM site_users WHERE userid = ? AND passwd = ?");
+			$stmt = $mysqli->prepare("SELECT count(1) FROM site_users WHERE userid = ? AND passwd = ? limit 0, 1");
 			$stmt->bind_param("ss", $username, $password);
 			$stmt->execute();
 			$stmt->bind_result($linecount);
