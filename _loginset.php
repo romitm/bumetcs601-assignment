@@ -4,17 +4,8 @@
 	$error = ""; 		// Variable To Store Error Message
 
 	function openMySQLDBConnection() {
-		/*
-		$mysql_host = "mysql3.000webhost.com";
-		$mysql_database = "a3640742_bumetcs";
-		$mysql_user = "a3640742_admin";
-		$mysql_password = "password1";
-		*/
-		$mysql_host = "localhost";
-		$mysql_user = "root";
-		$mysql_database = "bumetcs";
-		$mysql_password = "password";
-
+		/* Include the Database Parameters */
+		require "_dbparams.php";
 		/* Create Connection */
 		$mysqli = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_database);
 		/* check connection */

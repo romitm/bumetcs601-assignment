@@ -47,17 +47,9 @@
 		<div class="row">
 			<div class="col-10 hgrid-3">&nbsp;</div>
 		</div>
-<?php
-	/*
-	$mysql_host = "mysql3.000webhost.com";
-	$mysql_database = "a3640742_bumetcs";
-	$mysql_user = "a3640742_admin";
-	$mysql_password = "password1";
-	*/
-	$mysql_host = "localhost";
-	$mysql_user = "root";
-	$mysql_database = "bumetcs";
-	$mysql_password = "password";
+<?php 
+	/* Include the Database Parameters */
+	require "_dbparams.php";
 
 	// Create Connection
 	$conn = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_database);

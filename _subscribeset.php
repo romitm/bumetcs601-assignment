@@ -46,16 +46,8 @@
 <?php
 
 	function openMySQLDBConnection() {
-		/*
-		$mysql_host = "mysql3.000webhost.com";
-		$mysql_database = "a3640742_bumetcs";
-		$mysql_user = "a3640742_admin";
-		$mysql_password = "password1";
-		*/
-		$mysql_host = "localhost";
-		$mysql_user = "root";
-		$mysql_database = "bumetcs";
-		$mysql_password = "password";
+		/* Include the Database Parameters */
+		require "_dbparams.php";
 
 		/* Create Connection */
 		$mysqli = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_database);
@@ -63,7 +55,7 @@
 		if (mysqli_connect_errno()) {
 		    echo "
 		    <div class=\"row\">
-				<div class=\"col-10 hgrid-7\">&nbsp;</div>
+				<div class=\"col-10 hgrid-3\">&nbsp;</div>
 			</div>
 		    <div class=\"row padtop-4\">
 				<div class=\"col-1\"></div>
@@ -71,7 +63,7 @@
 				<div class=\"col-1\"></div>
 			</div>
 			<div class=\"row\">
-				<div class=\"col-10 hgrid-7\">&nbsp;</div>
+				<div class=\"col-10 hgrid-3\">&nbsp;</div>
 			</div>";
 		    exit();
 		}
@@ -167,7 +159,7 @@
 
 		echo "
 		<div class=\"row\">
-			<div class=\"col-10 hgrid-7\">&nbsp;</div>
+			<div class=\"col-10 hgrid-3\">&nbsp;</div>
 		</div>
 		<div class=\"row padtop-4\">
 			<div class=\"col-1\"></div>
@@ -189,9 +181,6 @@
 	    while ($stmt->fetch()) {
 	        if ($emailCount == 1 && strtoupper($retStatus) == "Y") {
 		        echo "
-		        <div class=\"row\">
-					<div class=\"col-10 hgrid-7\">&nbsp;</div>
-				</div>
 		        <div class=\"row padtop-4\">
 					<div class=\"col-1\"></div>
 					<div class=\"col-8\"><img src=\"images/cross.jpeg\" alt=\"No Action\" width=\"60\" />&nbsp;<p>No Action Required!</p></div>
@@ -203,7 +192,7 @@
 					<div class=\"col-1\"></div>
 				</div>
 				<div class=\"row\">
-					<div class=\"col-10 hgrid-7\">&nbsp;</div>
+					<div class=\"col-10 hgrid-5\">&nbsp;</div>
 				</div>";
 			}
 	    }
@@ -212,9 +201,6 @@
 
 	    if ($emailCount == 1 && strtoupper($retStatus) == "N") {
 			echo "
-			<div class=\"row\">
-				<div class=\"col-10 hgrid-7\">&nbsp;</div>
-			</div>
 			<div class=\"row padtop-4\">
 				<div class=\"col-1\"></div>
 				<div class=\"col-8\"><img src=\"images/exclaim.jpeg\" alt=\"Exclaim\" width=\"60\" />&nbsp;<p>Please Note!</p></div>
@@ -226,7 +212,7 @@
 				<div class=\"col-1\"></div>
 			</div>
 			<div class=\"row\">
-				<div class=\"col-10 hgrid-7\">&nbsp;</div>
+				<div class=\"col-10 hgrid-5\">&nbsp;</div>
 			</div>";
 
 			/* Update statement to be ensued here. */
@@ -242,9 +228,6 @@
 			$inStmt->close();
 
 			echo "
-			<div class=\"row\">
-				<div class=\"col-10 hgrid-7\">&nbsp;</div>
-			</div>
 			<div class=\"row padtop-4\">
 				<div class=\"col-1\"></div>
 				<div class=\"col-8\"><img src=\"images/check.jpeg\" alt=\"Success\" width=\"60\" />&nbsp;<p>Success!</p></div>
@@ -256,7 +239,7 @@
 				<div class=\"col-1\"></div>
 			</div>
 			<div class=\"row\">
-				<div class=\"col-10 hgrid-7\">&nbsp;</div>
+				<div class=\"col-10 hgrid-5\">&nbsp;</div>
 			</div>";
 
 			/* Send Email */
@@ -276,9 +259,6 @@
 		$unsStmt->close();
 
 		echo "
-		<div class=\"row\">
-			<div class=\"col-10 hgrid-7\">&nbsp;</div>
-		</div>
 		<div class=\"row padtop-4\">
 			<div class=\"col-1\"></div>
 			<div class=\"col-8\"><img src=\"images/check.jpeg\" alt=\"Success\" width=\"60\" />&nbsp;<p>Success!</p></div>
@@ -295,7 +275,7 @@
 			<div class=\"col-1\"></div>
 		</div>
 		<div class=\"row\">
-			<div class=\"col-10 hgrid-7\">&nbsp;</div>
+			<div class=\"col-10 hgrid-5\">&nbsp;</div>
 		</div>";
 
 		closeMySQLConnection($mysqli);
