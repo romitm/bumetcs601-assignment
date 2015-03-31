@@ -1,7 +1,8 @@
+<?php  
+  $serverdatetime = date("l jS \of F Y h:i:s A");
 
-<?php
   // Multiple Recipients
-  $to  = "rmaity@demandware.com" . ", "; // note the comma
+  $to  = "romitmaity@live.com" . ", "; // note the comma
   $to .= "romitmaity@yahoo.com";
 
   // Subject
@@ -11,19 +12,30 @@
   $message = "
     <html>
     <head>
-      <title>Birthday Reminders for August</title>
+      <title>Subscription Mail</title>
     </head>
     <body>
-      <p>Here are the birthdays upcoming in August!</p>
+      <p>Thank You! The Subscription request is as follows:</p>
       <table>
         <tr>
-          <th>Person</th><th>Day</th><th>Month</th><th>Year</th>
+          <th>Item</th>
+          <th>Status</th>
+          <th>Date</th>
         </tr>
         <tr>
-          <td>Joe</td><td>3rd</td><td>August</td><td>1970</td>
+          <td>Video & Timelapse Subscription</td>
+          <td>Active</td>
+          <td>" . $serverdatetime . "</td>
         </tr>
         <tr>
-          <td>Sally</td><td>17th</td><td>August</td><td>1973</td>
+          <td>HDR Photography and Weekly digest</td>
+          <td>Active</td>
+          <td>" . $serverdatetime . "</td>
+        </tr>
+        <tr>
+          <td>Special Promotions to Workshops & Tutorials</td>
+          <td>Active</td>
+          <td>" . $serverdatetime . "</td>
         </tr>
       </table>
     </body>
@@ -35,11 +47,11 @@
   $headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n";
 
   // Additional headers
-  $headers .= "To: Romit <rmaity@demandware.com>, Romit <romitmaity@yahoo.com>" . "\r\n";
+  //$headers .= "To: Romit Live <romitmaity@live.com>, Romit Yahoo <romitmaity@yahoo.com>" . "\r\n";
   $headers .= "From: Newsletter Subscription <newsletter@vista.com>" . "\r\n";
-  //$headers .= "Cc: birthdayarchive@example.com" . "\r\n";
-  //$headers .= "Bcc: birthdaycheck@example.com" . "\r\n";
+  //$headers .= "Cc: ccemail1@example.com" . "\r\n";
+  //$headers .= "Bcc: bccemail1@example.com" . "\r\n";
 
   // Mail It
-  mail($to, $subject, $message, $headers);
+  //mail($to, $subject, $message, $headers);
 ?>

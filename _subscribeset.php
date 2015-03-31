@@ -77,6 +77,54 @@
 		$conn->close();
 	}
 
+	function sendMail($email) {
+		$serverdatetime = date("l jS \of F Y h:i:s A");
+		// Single Recipients
+		$to = $email;
+		// Subject
+		$subject = "Newsletter Subscription: Successful";
+		// Message
+		$message = "
+			<html>
+			<head>
+			<title>Subscription Mail</title>
+			</head>
+			<body>
+				<p>Thank You! The Subscription request is as follows:</p>
+				<table>
+					<tr>
+						<th>Item</th>
+						<th>Status</th>
+						<th>Date</th>
+					</tr>
+					<tr>
+						<td>Video & Timelapse Subscription</td>
+						<td>Active</td>
+						<td>" . $serverdatetime . "</td>
+					</tr>
+					<tr>
+						<td>HDR Photography and Weekly digest</td>
+						<td>Active</td>
+						<td>" . $serverdatetime . "</td>
+					</tr>
+					<tr>
+						<td>Special Promotions to Workshops & Tutorials</td>
+						<td>Active</td>
+						<td>" . $serverdatetime . "</td>
+					</tr>
+				</table>
+			</body>
+			</html>
+		";
+		// To send HTML Email, the Content-type header must be set
+		$headers  = "MIME-Version: 1.0" . "\r\n";
+		$headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n";
+		// Additional headers
+		$headers .= "From: Newsletter Subscription <newsletter@vista.com>" . "\r\n";
+		// Send Mail
+		mail($to, $subject, $message, $headers);
+	}
+
 	/* Objects from the Form */
 	$userInput = trim($_POST["userinput"]);
 	$firstName = trim($_POST["firstname"]);
@@ -183,6 +231,9 @@
 				<div class=\"col-8 sub-col-grad\"><h3>The Subscriber information has been loaded successfully. Activation will proceed!</h3></div>
 				<div class=\"col-1\"></div>
 			</div>";
+
+			/* Send Email */
+			sendMail(strtolower($emailAddress));
 		}
 
 		closeMySQLConnection($mysqli);
