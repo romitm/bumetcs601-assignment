@@ -15,7 +15,7 @@
 <script src="scripts/jquery-2.1.3.min.js"></script>
 <!-- External Javascript file control -->
 <script src="scripts/validation.js"></script>
-<!-- JQuery Custom for Home Animation -->
+<!-- JQuery Custom for Subscribe Animation -->
 <script src="scripts/jq-custom-subscribe.js"></script>
 </head>
 <body>
@@ -48,8 +48,8 @@
 		</div>
 	</header>
 	<section>
-		<form id="subscribe-newsletter" action="_subscribeset.php" method="POST">
-			<div class="grid-container">
+		<div class="grid-container">
+			<form id="subscribe-newsletter" action="_subscribeset.php" method="POST">
 				<div class="row">
 					<div class="col-10">&nbsp;</div>
 				</div>
@@ -136,11 +136,24 @@
 						<input type="hidden" name="userinput" id="userinput" value="default" />
 					</div>
 				</div>
-				<div class="row row-20">
-					<div class="col-10">&nbsp;</div>
+			</form>
+			<div class="row">
+				<div class="col-10 hgrid-3">&nbsp;</div>
+			</div>
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-1">
+					<a id="ajaxfetchrecords" class="ext-link" href="#"><p>See Subscribers</p></a>
+				</div>
+				<div id="ajaxfetchmessage" class="col-7"><p>*&nbsp;Click to see how many are subscribed to the Newsletter and improving their Photography Skills.</p></div>
+				<div class="col-1">
+					<input type="hidden" name="userinput" id="userinput" value="default" />
 				</div>
 			</div>
-		</form>
+			<div class="row">
+				<div class="col-10 hgrid-3">&nbsp;</div>
+			</div>
+		</div>
 	</section>
 	<footer>
 		<div id="ftr-area" class="grid-container footer-area">
@@ -180,6 +193,23 @@
 			</div>
 		</div>
 	</footer>
+<script>
+$("#ajaxfetchrecords").click(function(event) {
+	event.preventDefault();
+	$.ajax({
+		type: "GET", 
+		url: "_dbcount.php", 
+		data: "", 
+		success: function (data) {
+			$("#ajaxfetchmessage").addClass("sub-col-grad").html("<p><h5>Currently there are " + data + " Subscribers for the Newsletters and More!</h5></p>");
+		},
+		error: function (xhr, ajaxOptions, thrownError) {
+			//what to do in error
+		},
+		timeout : 15000 //timeout of the ajax call
+	});
+});
+</script>
 </body>
 </html>
 <!-- Copyright Protected 2015 Boston University, Romit Maity BU MET CS -->

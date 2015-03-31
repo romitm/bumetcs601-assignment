@@ -259,6 +259,9 @@
 		$unsStmt->close();
 
 		echo "
+		<div class=\"row\">
+			<div class=\"col-10 hgrid-3\">&nbsp;</div>
+		</div>
 		<div class=\"row padtop-4\">
 			<div class=\"col-1\"></div>
 			<div class=\"col-8\"><img src=\"images/check.jpeg\" alt=\"Success\" width=\"60\" />&nbsp;<p>Success!</p></div>
