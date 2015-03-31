@@ -180,6 +180,9 @@
 	    while ($stmt->fetch()) {
 	        if ($emailCount == 1 && strtoupper($retStatus) == "Y") {
 		        echo "
+		        <div class=\"row\">
+					<div class=\"col-10 hgrid-7\">&nbsp;</div>
+				</div>
 		        <div class=\"row padtop-4\">
 					<div class=\"col-1\"></div>
 					<div class=\"col-8\"><img src=\"images/cross.jpeg\" alt=\"No Action\" width=\"60\" />&nbsp;<p>No Action Required!</p></div>
@@ -189,6 +192,9 @@
 					<div class=\"col-1\"></div>
 					<div class=\"col-8 sub-col-grad\"><h4>Email Already exists. And the the Status of the Subscription is already: '" . $retStatus . "'</h4></div>
 					<div class=\"col-1\"></div>
+				</div>
+				<div class=\"row\">
+					<div class=\"col-10 hgrid-7\">&nbsp;</div>
 				</div>";
 			}
 	    }
@@ -197,6 +203,9 @@
 
 	    if ($emailCount == 1 && strtoupper($retStatus) == "N") {
 			echo "
+			<div class=\"row\">
+				<div class=\"col-10 hgrid-7\">&nbsp;</div>
+			</div>
 			<div class=\"row padtop-4\">
 				<div class=\"col-1\"></div>
 				<div class=\"col-8\"><img src=\"images/exclaim.jpeg\" alt=\"Exclaim\" width=\"60\" />&nbsp;<p>Please Note!</p></div>
@@ -206,6 +215,9 @@
 				<div class=\"col-1\"></div>
 				<div class=\"col-8 sub-col-grad\"><h4>Email Already exists. And the the Status of the Subscription is: " . $retStatus . " So this will go for Activation in a while.</h4></div>
 				<div class=\"col-1\"></div>
+			</div>
+			<div class=\"row\">
+				<div class=\"col-10 hgrid-7\">&nbsp;</div>
 			</div>";
 
 			/* Update statement to be ensued here. */
@@ -221,6 +233,9 @@
 			$inStmt->close();
 
 			echo "
+			<div class=\"row\">
+				<div class=\"col-10 hgrid-7\">&nbsp;</div>
+			</div>
 			<div class=\"row padtop-4\">
 				<div class=\"col-1\"></div>
 				<div class=\"col-8\"><img src=\"images/check.jpeg\" alt=\"Success\" width=\"60\" />&nbsp;<p>Success!</p></div>
@@ -230,6 +245,9 @@
 				<div class=\"col-1\"></div>
 				<div class=\"col-8 sub-col-grad\"><h3>The Subscriber information has been loaded successfully. Activation will proceed!</h3></div>
 				<div class=\"col-1\"></div>
+			</div>
+			<div class=\"row\">
+				<div class=\"col-10 hgrid-7\">&nbsp;</div>
 			</div>";
 
 			/* Send Email */
@@ -249,6 +267,9 @@
 		$unsStmt->close();
 
 		echo "
+		<div class=\"row\">
+			<div class=\"col-10 hgrid-7\">&nbsp;</div>
+		</div>
 		<div class=\"row padtop-4\">
 			<div class=\"col-1\"></div>
 			<div class=\"col-8\"><img src=\"images/check.jpeg\" alt=\"Success\" width=\"60\" />&nbsp;<p>Success!</p></div>
@@ -263,6 +284,9 @@
 			<div class=\"col-1\"></div>
 			<div class=\"col-8 sub-col-grad\"><h3>Your Email Address '" . strtolower($emailAddress) . "' has been deactivated!</h3></div>
 			<div class=\"col-1\"></div>
+		</div>
+		<div class=\"row\">
+			<div class=\"col-10 hgrid-7\">&nbsp;</div>
 		</div>";
 
 		closeMySQLConnection($mysqli);
@@ -310,3 +334,4 @@
 	</footer>
 </body>
 </html>
+<!-- Copyright Protected 2015 Boston University, Romit Maity BU MET CS -->
