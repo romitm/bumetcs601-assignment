@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Gallery</title>
+<title>Slideshow</title>
 <!-- Main Stylesheet -->
 <link rel="stylesheet" type="text/css" href="styles/submain.css">
 <!-- Learning to add Google Font on the page -->
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+<!-- For the Hero Area -->
+<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300' rel='stylesheet' type='text/css'>
 <meta name="description" content="Boston University">
 <meta name="keywords" content="BU, CS601, Web Application Development, Spring, 2015">
 <!-- Learning to add a favicon -->
 <link rel="icon" href="images/favicon.ico?v=3" type="image/x-icon" />
 <meta charset="UTF-8">
+<!-- JQuery Library - Local and Not CDN -->
+<script src="scripts/jquery-2.1.3.min.js"></script>
+<!-- JQuery Cycle Lite for Animation Effects -->
+<script src="scripts/jquery.cycle2.min.js"></script>
+<script src="scripts/jquery.cycle2.center.min.js"></script>
+<script src="scripts/jquery.cycle2.caption2.min.js"></script>
+<style type="text/css">
+.cycle-slideshow img { 
+	width: 70%; 
+	height: auto;
+	text-align: center; 
+}
+</style>
 </head>
 <body>
 	<header>
 		<div class="grid-container hgrid-5 bgblack">
 			<div class="row padtop-2 bgblack">
 				<div class="col-8 bgblack">
-					<div class="header"><p>Photography</p></div>
+					<div class="header"><p>Slideshow</p></div>
 				</div>
 				<div class="col-2 bgblack">
 					<p><img src="images/logo.png" alt="Site Logo" width="200" /></p>
@@ -31,7 +46,7 @@
 								<li><a class="menu-link" href="home.html">Home</a></li>
 								<li><a class="menu-link" href="profile.html">Profile</a></li>
 								<li><a class="menu-link" href="subscribe.html">Subscribe</a></li>
-								<li class="active-link">Gallery</li>
+								<li><a class="menu-link" href="gallery.html">Gallery</a></li>
 								<li><a class="menu-link" href="feature.html">Feature</a></li>
 								<li><a class="menu-link" href="jwelcome.html">JSWorks</a></li>
 							</ul>
@@ -43,78 +58,26 @@
 	</header>
 	<section>
 		<div class="grid-container">
-			<div class="row">
-				<div class="col-10 gallery-image">
-					<div class="t-center">
-						<h1>&nbsp;</h1>
-						<h1 class="sub-header">Gallery</h1>
-						<h2 class="sub-header">Creativity. Diversity. Versatility.</h2>
-						<h3>&nbsp;</h3>
-						<h2>&nbsp;</h2>
-						<h2>&nbsp;</h2>
-					</div>
-				</div>
+			<div class="row bgblack">
+				<div class="col-10 hgrid-5">&nbsp;</div>
 			</div>
-			<div class="row bgltblue">
-				<div class="col-10 hgrid-3">
-					<div>&nbsp;<!-- Spacer -->&nbsp;</div>
-				</div>
-			</div>
-			<div class="row bgltblue">
+			<div class="row bgblack">
 				<div class="col-10">
 					<div class="t-center">
-						<table>
-  							<caption>Explore!</caption>
-  							<thead>
-								<tr>
-									<th>Gallery</th>
-									<th>Description</th>
-									<th>Activate</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="odd-row">Photograph</td>
-									<td class="odd-row">A static gallery of photos and a narration of where and how they were captured.</td>
-									<td class="odd-row"><a href="slideshow.html" class="ext-link">Visit&nbsp;&nbsp;&nbsp;
-										<img src="images/linkarrow.png" alt="Visit" width="26"></a>
-									</td>
-								</tr>
-								<tr>
-									<td class="even-row">Timelapse</td>
-									<td class="even-row">A different form of photography and then turning them into a dynamic creation.</td>
-									<td class="even-row"><a href="feature.html" class="ext-link">Visit&nbsp;&nbsp;&nbsp;
-										<img src="images/linkarrow.png" alt="Visit" width="26"></a>
-									</td>
-								</tr>
-								<tr>
-									<td class="odd-row">Video</td>
-									<td class="odd-row">Motion and Sounds create the vibrant portrayal of nature. See here for more.</td>
-									<td class="odd-row"><a href="javascript:alert('Under Construction!');" class="ext-link">Visit&nbsp;&nbsp;&nbsp;
-										<img src="images/linkarrow.png" alt="Visit" width="26"></a>
-									</td>
-								</tr>
-								<tr>
-									<td class="even-row">Swivel</td>
-									<td class="even-row">A swivel gallery to showcase the best works in one spot!</td>
-									<td class="even-row"><a href="javascript:alert('Under Construction!');" class="ext-link">Visit&nbsp;&nbsp;&nbsp;
-										<img src="images/linkarrow.png" alt="Visit" width="26"></a>
-									</td>
-								</tr>
-							</tbody>
-							<tfoot>
-								<tr>
-									<td class="" colspan="3">
-										<img src="images/webuc.jpg" alt="Under Construction" width="100" />&nbsp;&nbsp;
-										Some of the Links here are still under construction. Please bear with the Developer. Once completed this message will be removed.
-									</td>
-								</tr>
-							</tfoot>
-						</table>
+						<div id="swivelimages" class="cycle-slideshow" data-cycle-fx="fade" data-cycle-pause-on-hover="false" data-cycle-speed="1000" data-cycle-center-horz="true" data-cycle-center-vert="true" data-cycle-caption-plugin="caption2" data-cycle-overlay-fx-sel=">div">
+							<!-- empty element for overlay -->
+							<img src="images/pg1001.jpg" data-cycle-title=" " data-cycle-desc="Old Stone Church, Boylston, Mass." />
+							<img src="images/pg1002.jpg" data-cycle-title=" " data-cycle-desc="Alien Resurrection (Light Painting), Westborough, Mass." />
+							<img src="images/pg1003.jpg" data-cycle-title=" " data-cycle-desc="Washington Street, Wellesley, Mass." />
+							<img src="images/pg1004.jpg" data-cycle-title=" " data-cycle-desc="Leonard P. Zakim Bunker Hill Memorial Bridge, Charlestown, Mass." />
+							<img src="images/pg1005.jpg" data-cycle-title=" " data-cycle-desc="Seaport Boulevard, Boston, Mass." />
+							<div class="cycle-caption"></div>
+							<div class="cycle-overlay"></div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row bgltblue">
+			<div class="row bgblack">
 				<div class="col-10 hgrid-5">&nbsp;</div>
 			</div>
 		</div>
