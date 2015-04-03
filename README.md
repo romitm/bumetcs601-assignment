@@ -38,7 +38,7 @@ MySQL Exceptions and Server Malfunctions
 ---
 Use the following URL to get the bad installation out and then re-install the whole package. *Please note this is for the MAC OS-X 10.10.x or higher.*
 
-`https://coderwall.com/p/os6woq/uninstall-all-those-broken-versions-of-mysql-and-re-install-it-with-brew-on-mac-mavericks`
+https://coderwall.com/p/os6woq/uninstall-all-those-broken-versions-of-mysql-and-re-install-it-with-brew-on-mac-mavericks
 
 
 Contact and Support
