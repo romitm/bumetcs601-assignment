@@ -39,10 +39,13 @@
 			$username = stripslashes($username);
 			$password = stripslashes($password);
 
+			/* Encrypt the Password and Check on the Database */
+			$encryptedPassword = hash("sha256", $password);
+
 			/* Get Connection */
 			$mysqli = openMySQLDBConnection();
 			$stmt = $mysqli->prepare("SELECT count(1) FROM site_users WHERE userid = ? AND passwd = ? limit 0, 1");
-			$stmt->bind_param("ss", $username, $password);
+			$stmt->bind_param("ss", $username, $encryptedPassword);
 			$stmt->execute();
 			$stmt->bind_result($linecount);
 
@@ -52,7 +55,7 @@
 					header("location: _admin.php");
 		        } else {
 		        	$_SESSION["usererror"] = "ERR01";
-					$error = "Username or Password is invalid";
+					$error = "Username And / Or Password is Invalid";
 					header("location: _login.php");
 		        }
 		    }

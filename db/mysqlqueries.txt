@@ -1,6 +1,10 @@
+show databases;
+
 create database bumetcs;
 
 use bumetcs;
+
+show tables;
 
 create table newsletter_subscription (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -44,7 +48,9 @@ alter table site_users AUTO_INCREMENT = 1;
 alter table site_users add id int unsigned not null auto_increment primary key first;
 
 insert into site_users (userid, passwd, usr_role, usr_group) values (
-	'siteadmin', 'siteadminpassword', 'ADMIN', 'ADMIN');
+	'siteadmin', '4b4d84a924bee4381c8cba1badfe3aa96cd7746ec02e36f862fab18caf42dafc', 'Admin', 'Admin');
 
 insert into site_users (userid, passwd, usr_role, usr_group) values (
-	'userromit', 'userpassword', 'USER', 'USER');
+	'userromit', '59044992d6137e5c50773bd91a7d9b46f0b64b9bcf647cceac9614fd47897856', 'User', 'User');
+
+select * from site_users;

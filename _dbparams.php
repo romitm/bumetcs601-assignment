@@ -5,9 +5,9 @@
 	$mysql_user = "a3640742_admin";
 	$mysql_password = "password1";
 	*/
-	$mysql_host = "localhost";
+	$mysql_host = "127.0.0.1";
 	$mysql_user = "root";
 	$mysql_database = "bumetcs";
-	$mysql_password = "password";
+	$mysql_password = "rootmysql";
 	/**/
 ?>
