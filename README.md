@@ -34,6 +34,13 @@ To execute the Project you will require an Apache (or any other Web Server) and 
 > - Restart the Apache Server instance.
 > - Launch the webpage http://localhost/home.html
 
+MySQL Exceptions and Server Malfunctions
+---
+Use the following URL to get the bad installation out and then re-install the whole package. *Please note this is for the MAC OS-X 10.10.x or higher.*
+
+`https://coderwall.com/p/os6woq/uninstall-all-those-broken-versions-of-mysql-and-re-install-it-with-brew-on-mac-mavericks`
+
+
 Contact and Support
 ---
 For any issues, recommendations, suggestions please reach out to romitmaity@yahoo.com for further information.
