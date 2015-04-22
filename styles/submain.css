@@ -223,7 +223,7 @@ td[class="odd-row"] {
 	text-align: left;
 }
 
-/* Textbos styling */
+/* Textbox styling */
 input[type="text"], input[type="password"], input[type="email"], select {
 	display: block;
 	margin: 0;
@@ -280,6 +280,41 @@ input[type="button"].warning-button {
 input[type="button"].warning-button:hover {
 	color: #19A347;
 	background: #cdcdcd;
+}
+
+/* Gallery Migrated Stylesheet */
+.image-border {
+	border: 1px solid #9a9a9a;
+	width: 50%;
+}
+.showcase {
+	padding: 0.1%;
+	box-shadow: 1px 1px 10px 2px #adadad;
+}
+.showcase-thumbnail {
+	padding-left: 2%;
+	padding-bottom: 1%;
+}
+.description {
+	width: 100%;
+	float: right;
+	text-align: justify;
+	background-color: #434343;
+	padding: 0% 2% 0% 2%;
+	color: #fff;
+	font-size: 90%;
+	font-weight: normal;
+	letter-spacing: 1px;
+	background: -webkit-linear-gradient(right, #343434, #787878); /* For Safari 5.1 to 6.0 */
+ 	background: -o-linear-gradient(right, #343434, #787878); /* For Opera 11.1 to 12.0 */
+ 	background: -moz-linear-gradient(right, #343434, #787878); /* For Firefox 3.6 to 15 */
+ 	background: linear-gradient(to right, #343434, #787878); /* Standard syntax */
+}
+.instruction {
+	color: #fff;
+	font-size: 90%;
+	font-weight: normal;
+	letter-spacing: 1px;
 }
 
 /* Column Gradient */
