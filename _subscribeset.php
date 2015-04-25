@@ -3,7 +3,7 @@
 <head>
 <title>Newsletter Subscribe</title>
 <!-- Main Stylesheet -->
-<link rel="stylesheet" type="text/css" href="styles/submain.css">
+<link rel="stylesheet" type="text/css" href="styles/submain.min.css">
 <!-- Learning to add Google Font on the page -->
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 <meta name="description" content="Boston University">
